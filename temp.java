@@ -8,6 +8,7 @@ public class temp {
     String scale;
     String convert;
     int temp;
+    double newTemp;
     do{
         System.out.print("Enter an origin scale: ");
         scale = in.nextLine();
@@ -24,10 +25,21 @@ public class temp {
             }
     }while(scale != "F" || scale != "f"|| scale != "C" || scale != "c");
     
-    if(scale = "F") {
+    if(scale = "F" || scale = 'f') {
         if(convert = "C"){
-            
+            newTemp = (temp - 32) * (5/9);
+        }else if(convert = "K"){
+            newTemp = ((temp -32)*(5/9)) + 273.15; 
+        }    
+        }else if("C"){
+            if(convert = "F"){
+                newTemp = (temp *(9/5)) + 32;
+            }else{
+                newTemp = temp + 273.15
+            }
         }
+
+        System.out.print(temp + "equals" + newTemp);
     }
 
   }
